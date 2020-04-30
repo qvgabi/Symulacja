@@ -42,7 +42,7 @@ public class Render extends JPanel {
         for (Road road:roads) {
             int roadID=road.getRoadID();
             int beg = road.getBeginning();
-            ArrayList<Car> cars = alg.lista.get(roadID);
+            ArrayList<Car> cars = alg.queues.get(roadID);
             for (Car car : cars) {
                 int progress = car.getProgress();
                 if(roadID==1 || roadID==2 || roadID==3) {
