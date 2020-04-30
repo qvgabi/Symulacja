@@ -1,28 +1,20 @@
 package com.company;
 
 import java.awt.geom.Point2D;
-import java.util.ArrayList;
 
 public class Road {
-    Double cellSize = 1.5;
-    private int roadID;
-    private int length;
-    private Point2D.Double beginning;
-    private Point2D.Double end;
-    private ArrayList<Road> nextRoads;
+    public double cellSize = 1.0;
+    public int roadID;
+    public int length;
+    public int beginning;
+    public int end;
 
-    public Road() {
-    }
 
-    public Road(int roadID, Point2D.Double beginning, Point2D.Double end){
+    public Road(int roadID, int beginning, int end){
         this.roadID = roadID;
-        this.length = (int) Math.floor(distance(beginning.x, end.x, beginning.y, end.y)/cellSize);
+        this.length = end - beginning;
         this.beginning = beginning;
         this.end = end;
-    }
-
-    public void setNextRoads(ArrayList<Road> nextRoads) {
-        this.nextRoads = nextRoads;
     }
 
 
@@ -44,7 +36,11 @@ public class Road {
         return(c * r);
     }
 
-    public Point2D.Double getBeginning() {
+    public int getBeginning() {
         return beginning;
+    }
+
+    public int getRoadID() {
+        return roadID;
     }
 }

@@ -1,31 +1,31 @@
-package com.company;
+package com.company;;
 
 import java.util.Random;
 
 public class Car {
-    private int carID;
-    private int roadID;
+    public int roadID;
+    public boolean availability = true;
+    public int progress;
+    public int target;
 
-    private int progress;
-    private int target;
-
-    public enum Color {
-        BLACK, WHITE, GRAY, SILVER, GOLD, RED, GREEN, BLUE;
+    public int getProgress() {
+        return progress;
     }
 
+    public enum Color {
+        BLACK, WHITE, GRAY, SILVER, GOLD, RED, GREEN, BLUE
+    }
 
     private Color color;
 
-    private int velocity;
-    private int maxVelocity;
+    public int velocity;
+    public int maxVelocity;
 
-    private static int idCounter = 0;
 
-    public Car(int velocity, int maxVelocity){
-        idCounter++;
-        this.carID = idCounter;
+    public Car(int velocity, int maxVelocity,int target){
         this.progress = 0;
-        this.target = new Random().nextInt(1);
+      //  this.target = new Random().nextInt(1);
+        this.target = target%2;
         this.color = Color.values()[new Random().nextInt(Color.values().length)];
         this.velocity = velocity;
         this.maxVelocity = maxVelocity;
@@ -33,13 +33,5 @@ public class Car {
 
     public void putOnRoad(int roadID){
         this.roadID = roadID;
-    }
-
-    public int getProgress() {
-        return progress;
-    }
-
-    public int getRoadID() {
-        return roadID;
     }
 }
