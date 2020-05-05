@@ -1,5 +1,10 @@
 package com.company;;
 
+import javax.imageio.ImageIO;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.Random;
 
 public class Car {
@@ -7,6 +12,14 @@ public class Car {
     public boolean availability = true;
     public int progress;
     public int target;
+    private BufferedImage image;
+    private String filename;
+    int x;
+    int y;
+
+    private BufferedImage getImage(String filename) throws IOException {
+        return ImageIO.read(new File(filename));
+    }
 
     public int getProgress() {
         return progress;
@@ -33,5 +46,9 @@ public class Car {
 
     public void putOnRoad(int roadID){
         this.roadID = roadID;
+    }
+
+    public void paint(Graphics2D g2d) {
+        g2d.drawImage(image, x, y, null);
     }
 }

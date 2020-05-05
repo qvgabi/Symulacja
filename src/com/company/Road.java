@@ -1,18 +1,19 @@
 package com.company;
 
+import java.awt.*;
 import java.awt.geom.Point2D;
 
 public class Road {
     public double cellSize = 1.0;
     public int roadID;
     public int length;
-    public int beginning;
-    public int end;
+    public Point beginning;
+    public Point end;
 
 
-    public Road(int roadID, int beginning, int end){
+    public Road(int roadID,Point beginning, Point end){
         this.roadID = roadID;
-        this.length = end - beginning;
+        //this.length = end - beginning;
         this.beginning = beginning;
         this.end = end;
     }
@@ -36,7 +37,7 @@ public class Road {
         return(c * r);
     }
 
-    public int getBeginning() {
+    public Point getBeginning() {
         return beginning;
     }
 
