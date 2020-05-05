@@ -59,6 +59,8 @@ public class Render extends JPanel {
                                 x = (int) beg.getX();
                                 y = (int) (beg.getY()+progress);
                             }
+                            car.setX(x);
+                            car.setY(y);
                             toRender.add(car); //autka do wyrenderowania, ktore maja tylko wspolrzedne
                         }
 

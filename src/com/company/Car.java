@@ -48,6 +48,14 @@ public class Car {
         this.roadID = roadID;
     }
 
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
     public void paint(Graphics2D g2d) {
         g2d.drawImage(image, x, y, null);
     }
